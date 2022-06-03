@@ -1,7 +1,7 @@
 .article {
     display: inline-block;
-    height: 150px;
-    width: 250px;
+    height: 500px;
+    width: 500px;
     padding: 5px;
     margin: 5px;
 }
@@ -20,7 +20,7 @@
     margin: auto;
     left: 0;
     right: 0;    
-    margin-top: -14%;
+    margin-top: -34%;
 
     
 }
@@ -35,7 +35,9 @@
     right: 0;
     height: fit-content;
     margin: auto;
-    margin-top: -10%;
+    margin-top: -12%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 
 }
 
@@ -45,10 +47,14 @@
     position: absolute;
     height: fit-content;
     margin: auto;
-    margin-top: -8%;
+    margin-top: -11%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
     left: 0;
     right: 0;
+    font-weight: 200;
+    font-size: 40px;
+
 }
 
 
@@ -59,10 +65,13 @@
     position: absolute;
     height: fit-content;
     margin: auto;
-    margin-top: -6%;
-
+    margin-top: -8%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     left: 0;
     right: 0;
+    font-weight: 200;
+    font-size: 40px;
+
 }
 
 
@@ -72,8 +81,8 @@
     position: absolute;
     height: fit-content;
     margin: auto;
-    margin-top: -5%;
-
+    margin-top: -4%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     left: 0;
     right: 0;
 }
