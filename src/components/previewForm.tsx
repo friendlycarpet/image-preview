@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import styles from "../styles/Picture.module.css";
 import background from "../../public/background.png";
 import Image from 'next/image'
-
+import ImagePreview from "./ImagePreview";
 
 function PreviewForm() {
   const [renderImg, setRenderImg] = useState(false);
@@ -22,27 +22,11 @@ function PreviewForm() {
       cover_img_url: ""
     }
   });
-
-  console.log(watch("id")); // you can watch individual input by pass the name of the input
+  
   return (
     <div className="grid place-items-center h-screen">
       {renderImg && 
-        <article className={styles.article}>
-          <picture className={styles.picture}>
-            <source media="(min-width: 0px)" srcSet={background} />
-            <Image src={background} alt="background" />
-          </picture>
-   
-          
-          {(getValues('cover_img_url').includes('wikimedia.org') || getValues('cover_img_url').includes('as1.ftcdn.net')) &&    <h1 className={styles.cover_img_url}>
-          <Image src={getValues('cover_img_url')}  width="300px" height = "300px" alt="background" />
-          </h1>}
-          <h1 className={styles.createdAt}>{getValues('createdAt')}</h1>
-          <h1 className={styles.id}>{getValues('id')}</h1>
-          <h1 className={styles.slug}><i>{getValues('slug')}</i></h1>
-          <h1 className={styles.categories}>{getValues('categories')}</h1>
-
-        </article>}
+       <ImagePreview createdAt={getValues('createdAt')} id={getValues('id')}  slug={getValues('slug')} categories={getValues('categories')} cover_img_url={getValues('cover_img_url')}></ImagePreview>}
       <form className="w-full max-w-sm" onSubmit={handleSubmit((data) => {
         alert(JSON.stringify(data));
         setRenderImg(true)
@@ -106,7 +90,6 @@ function PreviewForm() {
           </div>
         </div>
         {(errors.id && errors.slug && errors.categories && errors.createdAt && errors.cover_img_url) && <p>All fields are required</p>}
-
       </form >
     </div>
   );
