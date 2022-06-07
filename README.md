@@ -1,3 +1,6 @@
+## Image Preview
+Generate a image preview, given an article
+
 https://user-images.githubusercontent.com/105781179/172398809-1cc5719e-fc9e-46ea-9783-0505dc93ee1c.mov
 
 Please add cover image base domain to next.config.js for it to load properly
